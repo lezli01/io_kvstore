@@ -28,6 +28,10 @@ unit_test: $(UNIT_TEST_OBJECTS) src/server/map.o
 
 run_unit_test: unit_test
 	build/unit_test
+
+style:
+	-uncrustify -c uncrustify-c-cpp.cfg --no-backup --replace src/server/*.c src/server/*.h test/*.c
+
 clean:
 	-rm -rf build
 	-rm -rf src/server/*.o
